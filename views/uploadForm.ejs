@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Documents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
+      <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Upload Required Documents
+      </h1>
+      <form
+        action="/api/document/uploadDocument"
+        method="POST"
+        enctype="multipart/form-data"
+        class="space-y-6"
+      >
+        <!-- Government-Issued Photo ID -->
+        <div>
+          <label for="photoID" class="block text-sm font-medium text-gray-700">
+            Government-Issued Photo ID (Front):
+          </label>
+          <input
+            type="file"
+            name="photoID"
+            id="photoID"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Current Mortgage Billing Statement -->
+        <div>
+          <label
+            for="mortgageStatement"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Current Mortgage Billing Statement:
+          </label>
+          <input
+            type="file"
+            name="mortgageStatement"
+            id="mortgageStatement"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Homeowners' Insurance Policy -->
+        <div>
+          <label
+            for="insurancePolicy"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Homeowners' Insurance Policy Declarations Page:
+          </label>
+          <input
+            type="file"
+            name="insurancePolicy"
+            id="insurancePolicy"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Flood Insurance Policy -->
+        <div>
+          <label
+            for="floodPolicy"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Flood Insurance Policy Declarations Page (if applicable):
+          </label>
+          <input
+            type="file"
+            name="floodPolicy"
+            id="floodPolicy"
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Recent Paystubs and W-2s -->
+        <div>
+          <label
+            for="paystubsW2s"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Recent Paystubs and W-2s:
+          </label>
+          <input
+            type="file"
+            name="paystubsW2s"
+            id="paystubsW2s"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Tax Returns -->
+        <div>
+          <label
+            for="taxReturns"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Tax Returns:
+          </label>
+          <input
+            type="file"
+            name="taxReturns"
+            id="taxReturns"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Profit & Loss Statement -->
+        <div>
+          <label
+            for="profitLoss"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Profit & Loss Statement and Balance Sheet (if self-employed):
+          </label>
+          <input
+            type="file"
+            name="profitLoss"
+            id="profitLoss"
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Voided Check / ACH Form -->
+        <div>
+          <label
+            for="voidedCheck"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Voided Check / Deposit Ticket / ACH Form:
+          </label>
+          <input
+            type="file"
+            name="voidedCheck"
+            id="voidedCheck"
+            required
+            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Upload Documents
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const formData = new FormData(this);
+          const token = localStorage.getItem('token'); // Get token from localStorage
+      
+          if (!token) {
+            alert('Please complete personal information first');
+            window.location.href = '/api/user/personalInfoForm';
+            return;
+          }
+      
+          fetch("/api/document/uploadDocument", {
+            method: "POST",
+            headers: {
+              'x-auth-token': token
+            },
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            alert('Documents uploaded successfully!');
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert('Error uploading documents');
+          });
+        });
+      
+      // Add this to redirect if no token is found when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          alert('Please complete personal information first');
+          window.location.href = '/api/user/personalInfoForm';
+        }
+      });
+      </script>
+  </body>
+</html>
